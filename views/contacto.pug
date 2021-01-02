@@ -1,0 +1,21 @@
+extends layout
+
+
+block cards
+
+    div(class="row p-4")
+        each item in contactos
+            div(class="col-md-3")
+                div(class="card w-75")
+                    div(class="card-body")
+                        h5(class="card-title text-center")=item.nombre
+                        h5(class="card-title text-center")=item.numero
+                        div(class="d-flex justify-content-center")
+                           a(href=`/contacto/edit/${item.id}` class="btn btn-primary m-2") Editar
+                           a(href=`/contacto/delete/${item.id}` class="btn btn-danger m-2") Eliminar
+        else
+            div(class="col-md-3 mx-auto")
+                div(class="card mx-auto")
+                    div(class="card-body mx-auto")
+                        a(href="/contacto/add") 0 Contactos, Agregar uno +
+

@@ -1,0 +1,19 @@
+extends layout 
+
+block signup 
+    .row.p-4
+        .col-md-3.mx-auto
+            .card
+                .card-body
+                    h5.card-title.text-center Registrarse
+                    form(action="/login/signup" method="POST")
+                        .mb-3
+                            input.form-control(type="text" name="nombre" placeholder="Nombre")
+                        .mb-3
+                            input.form-control(type="text" name="username" placeholder="Username")
+                        .mb-3
+                            input.form-control(type="password" name="password" placeholder="Password")
+                        .d-grid.gap-2
+                            button.btn.btn-success(type="submit") Registrarse
+                        .d-flex.justify-content-end
+                            a.nav-link(href="/login") Iniciar Sesion

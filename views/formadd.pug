@@ -1,0 +1,18 @@
+extends layout
+
+block add
+    div(class="row")
+        div(class="col-md-3 p-4 mx-auto")
+            div(class="card")
+                div(class="card-body mx-auto")
+                    h5(class="card-title text-center mb-3") Agregar contacto
+                    form(action="/contacto/add", method="post")
+                        div(class="mb-3")
+                            input(type="text" placeholder="Nombre" class="form-control" name="nombre")
+                        div(class="mb-3")
+                            input(type="text" placeholder="Numero" class="form-control" name="numero")
+                        div(class="d-grid gap-2 mb-3")
+                            button(type="submit" class="btn btn-success w-auto") Guardar
+
+
+                    

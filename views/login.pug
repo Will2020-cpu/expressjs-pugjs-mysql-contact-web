@@ -1,0 +1,22 @@
+extends layout
+
+block login
+    .row.p-4
+        .col-md-3.mx-auto
+            .card
+                .card-body
+                    h5.card-title.text-center Iniciar Sesion
+                    form(action="/login" method="POST")
+                        .mb-3
+                            input.form-control(type="text" name="username" placeholder="Username")
+                        .mb-3
+                            input.form-control(type="password" name="password" placeholder="Password")
+                        .d-grid.gap-2
+                            button.btn.btn-success(type="submit") Iniciar Sesion
+                        .d-flex.justify-content-end
+                            a.nav-link(href="/login/signup") Registrarse
+
+                    
+
+            
+                    

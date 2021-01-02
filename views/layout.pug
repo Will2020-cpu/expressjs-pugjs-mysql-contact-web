@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title Crud APP
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css", integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1", crossorigin="anonymous")
+  body  
+     nav(class="navbar navbar-expand-lg navbar-light bg-light")
+        div(class="container-fluid w-75")
+            a(href="/" class="navbar-brand") Inicio
+            div(class="collapse navbar-collapse" id="navbarSupportedContent")
+                ul(class="navbar-nav ms-auto mb-2 mb-lg-0")
+                    if user
+                      a.nav-link(href="/contacto") Contactos
+                      a.nav-link(href="/contacto/add") Agregar
+                      a.nav-link(href="/profile") Perfil
+                      a.nav-link(href="/logout") Cerrar sesion
+                    else
+                      a.nav-link(href="/login") Iniciar Sesion
+                      a.nav-link(href="/login/signup") Registrarse
+ 
+ 
+  if exito.length > 0
+    .row.p-4
+     .col-md-4.mx-auto
+        .alert.alert-success.alert-dismissible.fade.show #{exito}
+           button.btn-close(type="button" data-bs-dismiss="alert" aria-label="close") 
+  if error.length > 0
+    .row.p-4
+     .col-md-4.mx-auto
+        .alert.alert-danger.alert-dismissible.fade.show #{error}
+           button.btn-close(type="button" data-bs-dismiss="alert" aria-label="close") 
+    
+
+
+block cards
+block content
+block add
+block edit
+block login
+block signup
+block profile
+block index
+
+  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous")
